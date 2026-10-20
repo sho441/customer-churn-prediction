@@ -39,10 +39,20 @@ Kaggle Playground (Customer Churn Prediction) を用いた顧客離脱予測モ�
 ### 3.複数モデルの比較と重み付きアンサンブル
 
 &emsp; ・10種類のアルゴリズム（勾配ブースティング系、線形モデル等）を比較・検証。
-<p style="padding-left: 1em; text-indent: -1em;">
+
 &emsp; ・OptunaによるLightGBMのハイパーパラメータチューニングを実施後、各モデルのOut-of-Fold (OOF) 予測に対して scipy.optimize
+  
 &emsp;&emsp; （SLSQP）を用いて最適な重みを算出し、精度を最大化。
-</p>
 
 ## 5.結果と考察
+### ・予測精度
 
+&emsp; ・単体モデルおよび最適化された重み付きアンサンブルにより、安定した高い ROC-AUCスコア を達成。過学習を抑えつつ、
+
+### ・特徴量重要度（解約要因のインサイト）の分析
+
+&emsp; ・特徴量重要度や係数の分析から、契約期間（tenure）や契約プラン（Contract）、特定のネット接続サービス（InternetService）の利用状況が顧客の離脱に大きな影響を与えていることを特定。
+
+&emsp;&emsp; 実務に耐えうる汎用性を確認。
+
+&emsp; ・カテゴリカル変数に対するターゲットエンコーディング（TE）や、N-gram（Bi-gram/Tri-gram）による組み合わせ特徴量の生成。
