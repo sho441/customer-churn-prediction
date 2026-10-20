@@ -14,13 +14,35 @@ Kaggle Playground (Customer Churn Prediction) を用いた顧客離脱予測モ�
 
 ## 3.使用した技術・ライブラリ
 ・言語: Python (3.0)
+
 ・データ処理・分析: Pandas, NumPy, Scikit-learn
+
 ・機械学習モデル: LightGBM, XGBoost, CatBoost, RandomForest, Logistic Regression, LinearSVC 他
+
 ・ハイパーパラメータ最適化: Optuna
+
 ・検証手法: ネステッド交差検証 (Nested Cross-Validation, 5-Fold), ターゲットエンコーディング
 
 ## 4.アプローチと工夫点
-### 1.
+### 1.厳格な検証設計
+
+&emsp; ・データリークを防ぎ、未知のデータに対する真の汎用性能を正しく評価するため、ネステッド交差検証を採用。
+
+### 2.ドメイン知識に基づく高度な特徴量エンジニアリング
+
+&emsp; ・実データ特有の法則性（tenure * MonthlyCharges ≈ TotalCharges）に着目し、理論値との乖離率や欠損値の論理的補完を実施。
+
+&emsp; ・カテゴリカル変数に対するターゲットエンコーディング（TE）や、N-gram（Bi-gram/Tri-gram）による組み合わせ特徴量の生成。
+
+&emsp; ・離脱者・継続者の分布に基づいた条件付きパーセンタイルランクや四分位数からの距離差分特徴量の作成。
+
+### 3.複数モデルの比較と重み付きアンサンブル
+
+&emsp; ・10種類のアルゴリズム（勾配ブースティング系、線形モデル等）を比較・検証。
+<p style="padding-left: 1em; text-indent: -1em;">
+&emsp; ・OptunaによるLightGBMのハイパーパラメータチューニングを実施後、各モデルのOut-of-Fold (OOF) 予測に対して scipy.optimize
+&emsp;&emsp; （SLSQP）を用いて最適な重みを算出し、精度を最大化。
+</p>
 
 ## 5.結果と考察
 
