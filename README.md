@@ -44,7 +44,7 @@ customer-churn-prediction/
 * **データの入手先①**: https://www.kaggle.com/competitions/playground-series-s6e3
 * **利用方法**: 上記リンクより `train.csv` および `test.csv` をダウンロードし、ローカル環境の `data/` フォルダ内に配置してご使用ください。
 * **データの入手先②**:　https://www.kaggle.com/datasets/blastchar/telco-customer-churn
-* * **利用方法**: 上記リンクより `WA_Fn-UseC_-Telco-Customer-Churn.csv` をダウンロードし、ローカル環境の `data/` フォルダ内に配置して`test.csv`ご使用ください。
+* * **利用方法**: 上記リンクより `WA_Fn-UseC_-Telco-Customer-Churn.csv` をダウンロードし、ローカル環境の `data/` フォルダ内に配置してご使用ください。
 
 ## 6.アプローチと工夫点
 ### ① 厳格な検証設計
