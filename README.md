@@ -13,15 +13,15 @@ Kaggle Playground (Customer Churn Prediction) を用いた顧客離脱予測モ�
 本プロジェクトでは、実務を想定した厳格な検証環境下で高精度な離脱予測モデルの検証を行いました。
 
 ## 3.使用した技術・ライブラリ
-・言語: Python (3.0)
+* **言語**: Python (3.0)
 
-・データ処理・分析: Pandas, NumPy, Scikit-learn
+* **データ処理・分析**: Pandas, NumPy, Scikit-learn
 
-・機械学習モデル: LightGBM, XGBoost, CatBoost, RandomForest, Logistic Regression, LinearSVC 他
+* **機械学習モデル**: LightGBM, XGBoost, CatBoost, RandomForest, Logistic Regression, LinearSVC 他
 
-・ハイパーパラメータ最適化: Optuna
+* **ハイパーパラメータ最適化**: Optuna
 
-・検証手法: ネステッド交差検証 (Nested Cross-Validation, 5-Fold), ターゲットエンコーディング
+* **検証手法**: ネステッド交差検証 (Nested Cross-Validation, 5-Fold), ターゲットエンコーディング
 
 ## 4.ディレクトリ構成
 本リポジトリでは、保守性と可読性を高めるため、処理を機能ごとにモジュール分割（`src/`）およびEDA用のノートブック（`notebooks/`）として整理しています。
@@ -41,8 +41,10 @@ customer-churn-prediction/
     └── exploratory.ipynb  # 探索的データ分析（EDA）ノートブック
 
 ## 5.データについて
-* **データの入手先**: [Kaggle等のデータ配布ページへのリンクを記載]
+* **データの入手先①**: https://www.kaggle.com/competitions/playground-series-s6e3
 * **利用方法**: 上記リンクより `train.csv` および `test.csv` をダウンロードし、ローカル環境の `data/` フォルダ内に配置してご使用ください。
+* **データの入手先②**:　https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+* * **利用方法**: 上記リンクより `WA_Fn-UseC_-Telco-Customer-Churn.csv` をダウンロードし、ローカル環境の `data/` フォルダ内に配置して`test.csv`ご使用ください。
 
 ## 6.アプローチと工夫点
 ### ① 厳格な検証設計
