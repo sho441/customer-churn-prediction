@@ -23,7 +23,38 @@ Kaggle Playground (Customer Churn Prediction) を用いた顧客離脱予測モ�
 
 ・検証手法: ネステッド交差検証 (Nested Cross-Validation, 5-Fold), ターゲットエンコーディング
 
-## 4.アプローチと工夫点
+## 4.ディレクトリ構成
+本リポジトリでは、保守性と可読性を高めるため、処理を機能ごとにモジュール分割（`src/`）およびEDA用のノートブック（`notebooks/`）として整理しています。
+
+customer-churn-prediction/
+
+├── README.md
+
+├── requirements.txt
+
+├── data/                  # ⚠️ データファイル（容量制限のためGit管理外）
+
+│   ├── train.csv          # ※下記リンクから配置してください
+
+│   └── test.csv
+
+├── src/
+
+│   ├── features.py        # 特徴量エンジニアリング・前処理関数
+
+│   ├── models.py          # モデル定義・ハイパーパラメータ
+
+│   └── train.py           # 学習・評価のメインパイプライン
+
+└── notebooks/
+
+    └── exploratory.ipynb  # 探索的データ分析（EDA）ノートブック
+
+## 5.データについて
+* **データの入手先**: [Kaggle等のデータ配布ページへのリンクを記載]
+* **利用方法**: 上記リンクより `train.csv` および `test.csv` をダウンロードし、ローカル環境の `data/` フォルダ内に配置してご使用ください。
+
+## 6.アプローチと工夫点
 ### ① 厳格な検証設計
 
 &emsp; ・データリークを防ぎ、未知のデータに対する真の汎用性能を正しく評価するため、ネステッド交差検証を採用。
@@ -42,7 +73,7 @@ Kaggle Playground (Customer Churn Prediction) を用いた顧客離脱予測モ�
 
 ・OptunaによるLightGBMのハイパーパラメータチューニングを実施後、各モデルのOut-of-Fold (OOF) 予測に対して scipy.optimize（SLSQP）を用いて最適な重みを算出し、精度を最大化。
 
-## 5.結果と考察
+## 7.結果と考察
 ### ・予測精度
 
 ・単体モデルおよび最適化された重み付きアンサンブルにより、安定した高い ROC-AUCスコア (5-Fold CV OOF ROC-AUC: 0.91667) を達成。過学習を抑えつつ、実務に耐えうる汎用性を確認。
