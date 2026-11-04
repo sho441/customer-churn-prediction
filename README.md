@@ -29,15 +29,25 @@ Kaggle Playground (Predict Customer Churn) を用いた顧客離脱予測モデ�
 customer-churn-prediction/
 
 ├── README.md
+
 ├── requirements.txt
+
 ├── data/                  # ⚠️ データファイル（容量制限のためGit管理外）
+
 │   ├── train.csv          # ※下記リンクから配置してください
+
 │   └── test.csv
+
 ├── src/
+
 │   ├── features.py        # 特徴量エンジニアリング・前処理関数
+
 │   ├── models.py          # モデル定義・ハイパーパラメータ
+
 │   └── train.py           # 学習・評価のメインパイプライン
+
 └── notebooks/
+
     └── exploratory.ipynb  # 探索的データ分析（EDA）ノートブック
 
 ## 5.データについて
