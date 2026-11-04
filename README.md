@@ -1,5 +1,5 @@
 # customer-churn-prediction
-Kaggle Playground (Customer Churn Prediction) を用いた顧客離脱予測モデルの構築・機械学習ポートフォリオ
+Kaggle Playground (Predict Customer Churn) を用いた顧客離脱予測モデルの構築・機械学習ポートフォリオ
 
 ## 1.プロジェクトの概要
 架空の通信会社の契約データをもとに、顧客の解約（離脱）を高精度に予測するモデルを構築。
