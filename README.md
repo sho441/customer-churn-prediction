@@ -13,7 +13,7 @@ Kaggle Playground (Predict Customer Churn) を用いた顧客離脱予測モデ�
 本プロジェクトでは、実務を想定した厳格な検証環境下で高精度な離脱予測モデルの検証を行いました。
 
 ## 3.使用した技術・ライブラリ
-* **言語**: Python (3.0)
+* **言語**: Python 3.x
 
 * **データ処理・分析**: Pandas, NumPy, Scikit-learn
 
